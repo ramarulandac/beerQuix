@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+
+*,*:before,*:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #F0A25B;
+}
+
+:root {
+    --navbar-size:60px;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+

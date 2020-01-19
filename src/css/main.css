@@ -1,0 +1,14 @@
+main {
+    position: relative;
+    /*max-width: 900px;*/
+    margin: 0 auto;
+    margin-top: var(--navbar-size);
+    height: 810px;    
+}
+
+
+.container {
+    position: absolute;
+    width:100%;    
+    margin-top: 50px;
+}

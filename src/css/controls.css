@@ -1,0 +1,58 @@
+.controls {
+  position: relative;
+  height: 100px;
+  width: 100%; 
+  margin-top: 20px;  
+}
+
+.form {
+  display: flex;
+  flex-flow: column; 
+}
+
+.controls-btn {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  color: whitesmoke;
+}
+
+@media(min-width:800px){
+  .controls-btn {
+    flex: 33%;
+    max-width: 33%;
+    padding: 0;    
+   
+  }
+}
+
+.controls-btn input, .controls-btn button {
+  width: 100%;   
+}
+
+.controls-btn button {
+  height: 100%;
+  background:  #FFBD59;
+  margin-top: 8px;
+  padding: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: whitesmoke;
+  border: 0;
+  border-radius: 25px;
+}
+
+.controls-btn input {
+  margin-bottom: 5px;
+  color:black;
+;
+}
+
+input, select  {
+  line-height: 2rem;
+}
+
+select {
+  width: 20%;
+}

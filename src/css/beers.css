@@ -1,0 +1,58 @@
+
+
+
+.beers {
+    grid-area: main;
+    
+    width: 100%;    
+    margin-top: 90px;
+    padding: 5px;
+    height: 680px;
+    background: whitesmoke;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.beers a {
+   text-decoration: none;
+}
+
+.card {
+
+    border: solid 1px  #F0A25B;
+    border-radius: 25px;
+    padding: 10px;   
+}
+
+.card-img {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 35px;
+    max-width: 85px;        
+}
+
+.card-img img {
+    width: 100%;
+}
+
+.card-text, .card-img {
+    display: inline-block;
+}
+
+.card-text  {
+    position: relative;
+    width: 100%;
+    min-width: 10px;    
+    max-width: 500px;
+}
+
+.card-text  p {    
+    margin-left: 10px;
+    text-align: justify;    
+    font-size: 1rem;
+    color:  #212121;
+    overflow-y: auto;
+    max-height: 100px;
+    min-width: 10px;
+}
