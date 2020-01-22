@@ -5,9 +5,10 @@ const getBeers =  async (filter, results) => {
 
    try {
 
-        const response = await fetch(endPoint.URL+filter,
+        const response = await fetch(endPoint.URL+`search?=${filter}&limit=${results}`,
                                 { method:'GET', 
-                                  headers:{'X-API-KEY':endPoint.API_KEY}}); 
+                                  headers:{'X-API-KEY':endPoint.API_KEY}
+                                }); 
 
         if(!response)  throw Error('Request error..');
 

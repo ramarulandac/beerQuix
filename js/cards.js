@@ -17,22 +17,18 @@ const getTemplate = (info) => {
             </a>`
 }
 
-
 const getCardRendered = (element, beers) => {
-    
+
     const beersDOM = beers.map(beer => getTemplate(beer));
     element.innerHTML = beersDOM;
 }
 
-const  getNextCard =  async (text) => {
-  /*- const card = {name:'Roger', image: './assets/sw.jpeg', message:'Lorem chitseunnn carombaleee'}*/
- 
+const  getNextCard =  async (text, items) => {
+   
     const element = document.querySelector('.beers');
-    const beers = await getBeers(text);
+    const beers = await getBeers(text, items);
     
-    getCardRendered(element, beers);
-
-    
+    getCardRendered(element, beers);    
 }
 
 export default getNextCard;
