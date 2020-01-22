@@ -1,16 +1,19 @@
-
-
-
-.beers {
-    grid-area: main;
-    
+.beers {       
     width: 100%;    
-    margin-top: 90px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 5px;
     height: 680px;
     background: whitesmoke;
     border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    border-top-right-radius: 25px;   
+}
+
+h2 {
+    margin-left: 15px;
+    margin-bottom: 3px;
+    font-size: 1.1rem;
 }
 
 .beers a {
@@ -18,41 +21,54 @@
 }
 
 .card {
-
     border: solid 1px  #F0A25B;
     border-radius: 25px;
-    padding: 10px;   
+}
+
+.card-content {   
+    padding: 3px;    
+    display: flex;
+    justify-content: center;    
 }
 
 .card-img {
-    display: flex;
-    justify-content: space-between;
     width: 100%;
     min-width: 35px;
     max-width: 85px;        
 }
 
 .card-img img {
-    width: 100%;
+    width: 80%;
+    margin-top: 13px;
 }
 
 .card-text, .card-img {
-    display: inline-block;
+    display: inline-block;    
 }
 
 .card-text  {
     position: relative;
     width: 100%;
     min-width: 10px;    
-    max-width: 500px;
+    max-width: 1200px;    
 }
 
 .card-text  p {    
-    margin-left: 10px;
+    margin-top: 15px;
     text-align: justify;    
-    font-size: 1rem;
+    font-size: .8rem;
     color:  #212121;
     overflow-y: auto;
-    max-height: 100px;
-    min-width: 10px;
+    max-height: 80px;
+    min-width: 10px;    
+}
+
+.fa-thumbs-up,.fa-comment {
+    color:#FFBD59;
+    margin-left:1%;
+    margin-top: 0;     
+}
+
+.like-comment {
+   text-align: center;
 }
