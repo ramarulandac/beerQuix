@@ -14,6 +14,7 @@ const controls = document.querySelector('.controls');
 const controlback = document.querySelector('.control-back')
 const beers = document.querySelector('.beers')
 const searchForm = document.querySelector('.search-form')
+const backForm = document.querySelector('.back-form')
 
 const inputSearch = document.querySelector('.input-search')
 const inputItems = document.querySelector('.input-items')
@@ -57,3 +58,11 @@ searchForm.addEventListener('submit', evt => {
    }
 })
 
+backForm.addEventListener('submit', evt => {
+
+    evt.preventDefault();
+    
+    handleControls('controls','disappear');
+    handleControlBack('control-back','appear');
+    handleBeers('beers','back');
+})
