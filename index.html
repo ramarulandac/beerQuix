@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./src/css/main.css">
     <link rel="stylesheet" href="./src/css/beers.css">
     <script src="https://kit.fontawesome.com/a7b2fd5869.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
 </head>
 <body>
     <nav class="navbar"><div class="logo">Beer Quix</div><div class="slogan">¡ Take part on our contest and earn beers..!</div></nav>
@@ -20,8 +21,8 @@
                 <div class="controls">
                         <form action="" class="search-form" novalidate>
                             <div class="controls-btn" id="search-form">
-                                <input type="text" required class="input-search" >                         
-                                <input type="date" class="input-date"><br>
+                                <input type="text" required placeholder="Search for the beers you like.." class="input-search"/>                         
+                                <input type="text" placeholder="Date month/year" onfocus="this.type='month'" class="input-date"/><br>
                                 <span>results</span>
                                  <select class="input-items">
                                         <option value="1">1</option>
@@ -33,7 +34,7 @@
                                         <option value="7">7</option>
                                         <option value="8">8</option>
                                         <option value="9">9</option>
-                                        <option value="10">10</option>
+                                        <option value="10" selected="selected">10</option>                                        
                                 </select>
                             </div>                       
                             <div class="controls-btn"><button type="submit" class="search-btn">Search!</button></div>                            

@@ -1,25 +1,49 @@
 import getNextCard from './cards.js'
+import replace from './ui.js'
+import storage from './storage.js'
+import {LOCAL_STYPE, COOKIES_STYPE} from './storage.js'
+
+const INPUT_SEARCH = 'input-search';
+const INPUT_DATE =  'input-date'
+const INPUT_ITEMS = 'input-items'
+
+const {setItem, getItem} = storage(COOKIES_STYPE)
 
 
 const searchBtn = document.querySelector('.search-btn');
 const controls = document.querySelector('.controls');
 const beers = document.querySelector('.beers')
 const searchForm = document.querySelector('.search-form')
+
 const inputSearch = document.querySelector('.input-search')
 const inputItems = document.querySelector('.input-items')
+const inputDate = document.querySelector('.input-date')
+
+const handleControls = replace(controls)
+
+inputDate.value = getItem(INPUT_SEARCH);
+inputDate.value = getItem(INPUT_DATE);
+inputItems.value = getItem(INPUT_ITEMS);
+
 
 searchBtn.addEventListener('click', evt => {
     
 })
 
-
 searchForm.addEventListener('submit', evt => {
 
-   evt.preventDefault();
-   console.log(inputItems.value)
+   evt.preventDefault();  
    
    if(inputSearch.validity.valid) {
-       getNextCard(inputSearch.value, inputItems.value);        
+       
+       setItem(INPUT_SEARCH,inputSearch.value)
+                    
+       if(inputItems.validity.valid) setItem(INPUT_ITEMS, inputItems.value);
+
+       if(inputDate.validity.valid) setItem(INPUT_DATE, inputDate.value);
+
+       getNextCard(inputSearch.value, inputItems.value, inputDate.value);
+       handleControls('disapear','controls');
    }
 })
 

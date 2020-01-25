@@ -4,6 +4,10 @@
   text-align: center;
 }
 
+.disapear {
+  display: none;
+}
+
 .controls-btn {
   color: whitesmoke;
 }

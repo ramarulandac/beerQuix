@@ -23,10 +23,10 @@ const getCardRendered = (element, beers) => {
     element.innerHTML = beersDOM;
 }
 
-const  getNextCard =  async (text, items) => {
+const  getNextCard =  async (text, items, date) => {
    
     const element = document.querySelector('.beers');
-    const beers = await getBeers(text, items);
+    const beers = await getBeers(text, items, date);
     
     getCardRendered(element, beers);    
 }

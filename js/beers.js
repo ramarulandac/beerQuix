@@ -1,11 +1,10 @@
 
 import endPoint from './auth.js'
 
-const getBeers =  async (filter, results) => {
+const getBeers =  async (filter, results, date) => {
 
    try {
-
-        const response = await fetch(endPoint.URL+`search?=${filter}&limit=${results}`,
+        const response = await fetch(endPoint.URL+`search=${filter}&limit=${results}`,
                                 { method:'GET', 
                                   headers:{'X-API-KEY':endPoint.API_KEY}
                                 }); 
