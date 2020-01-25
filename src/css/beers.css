@@ -4,7 +4,7 @@
     margin-left: auto;
     margin-right: auto;
     padding: 5px;
-    height: 680px;
+   /* height: 680px;*/
     background: whitesmoke;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;   
@@ -26,7 +26,8 @@ h2 {
 
 .card-container, .card-container.main  {
     background: whitesmoke;
-    padding: 3px;    
+    padding: 3px;
+    margin: 0;    
 }
 
 .card-container.main {   

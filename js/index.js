@@ -31,8 +31,12 @@ inputItems.value = getItem(INPUT_ITEMS) || 1;
 if (!(inputSearch.value === undefined) && ''!= inputSearch.value ) { 
     console.log(inputSearch.value)
     getNextCard(inputSearch.value,inputItems.value,inputDate.value)
-    handleControls('disappear','controls');
-    handleControlBack('appear','control-back')          
+   /* handleControls('disappear','controls');
+    handleControlBack('appear','control-back')          */
+
+    handleControls('controls','disappear');
+    handleControlBack('control-back','appear');
+    handleBeers('beers','back');
  }
 
 searchBtn.addEventListener('click', evt => {
