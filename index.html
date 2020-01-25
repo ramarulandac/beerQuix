@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./src/css/controls.css">
     <link rel="stylesheet" href="./src/css/main.css">
     <link rel="stylesheet" href="./src/css/beers.css">
+    <link rel="stylesheet" href="./src/css/ctrlback.css">
     <script src="https://kit.fontawesome.com/a7b2fd5869.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
 </head>
@@ -17,12 +18,17 @@
     <nav class="navbar"><div class="logo">Beer Quix</div><div class="slogan">¡ Take part on our contest and earn beers..!</div></nav>
     <main> 
         <div class="container">
-            <div class="row">               
+            <div class="row">  
+                <div class="control-back">
+                    <form action="" class="form-back" novalidate>
+                        <button type="submit" class="goback-btn"><span>Go back</span></button>
+                    </form>
+                </div>             
                 <div class="controls">
                         <form action="" class="search-form" novalidate>
                             <div class="controls-btn" id="search-form">
                                 <input type="text" required placeholder="Search for the beers you like.." class="input-search"/>                         
-                                <input type="text" placeholder="Date month/year" onfocus="this.type='month'" class="input-date"/><br>
+                                <input type="text" placeholder="Date Month/Year" onfocus="this.type='month'" class="input-date"/><br>
                                 <span>results</span>
                                  <select class="input-items">
                                         <option value="1">1</option>
@@ -42,16 +48,18 @@
                 </div>
                 <br>
                 <div class ="beers">
-                    <a href="">
-                        <header><h2>Star Wars</h2></header>
-                        <div class="card">
-                            <div class="card-content">                        
-                                <div class="card-img"><img src="/assets/sw.jpeg" alt=""></div>
-                                <div class="card-text"><p>Ms. Marvel / Kamala Khan is a Pakistani-American superhero, who received her shapeshifting powers as a result of the Inhumans' Terrigen Mists being released. Not only is she capable of stretching her limbs to great lengths and widths, but she can also grow or shrink to incredible sizes.</p></div>
+                    <div class="card-container main">
+                        <a href="">
+                            <header><h2>Star Wars</h2></header>
+                            <div class="card">
+                                <div class="card-content">                        
+                                    <div class="card-img"><img src="/assets/sw.jpeg" alt=""></div>
+                                    <div class="card-text"><p>Ms. Marvel / Kamala Khan is a Pakistani-American superhero, who received her shapeshifting powers as a result of the Inhumans' Terrigen Mists being released. Not only is she capable of stretching her limbs to great lengths and widths, but she can also grow or shrink to incredible sizes.</p></div>
+                                </div>
+                                <!--div class="like-comment"><i class="far fa-thumbs-up"></i><i class="far fa-comment"></i></div-->
                             </div>
-                            <div class="like-comment"><i class="far fa-thumbs-up"></i><i class="far fa-comment"></i></div>
-                        </div>
-                    </a>
+                        </a>
+                  </div> 
                 </div>               
             </div>
         </div>       

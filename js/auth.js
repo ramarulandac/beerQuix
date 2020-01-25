@@ -3,5 +3,4 @@ const auth = {
     URL:`https://beerflix-api.herokuapp.com/api/v1/beers?`    
 }
 
-
 export default auth;

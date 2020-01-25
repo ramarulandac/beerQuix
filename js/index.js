@@ -9,9 +9,9 @@ const INPUT_ITEMS = 'input-items'
 
 const {setItem, getItem} = storage(COOKIES_STYPE)
 
-
 const searchBtn = document.querySelector('.search-btn');
 const controls = document.querySelector('.controls');
+const controlback = document.querySelector('.control-back')
 const beers = document.querySelector('.beers')
 const searchForm = document.querySelector('.search-form')
 
@@ -20,11 +20,19 @@ const inputItems = document.querySelector('.input-items')
 const inputDate = document.querySelector('.input-date')
 
 const handleControls = replace(controls)
+const handleControlBack = replace(controlback)
+const handleBeers = replace(beers)
 
-inputDate.value = getItem(INPUT_SEARCH);
-inputDate.value = getItem(INPUT_DATE);
-inputItems.value = getItem(INPUT_ITEMS);
+inputSearch.value = getItem(INPUT_SEARCH) || null;
+inputDate.value = getItem(INPUT_DATE) || null;
+inputItems.value = getItem(INPUT_ITEMS) || 1;
 
+if (!(inputSearch.value === undefined) && ''!= inputSearch.value ) { 
+    console.log(inputSearch.value)
+    getNextCard(inputSearch.value,inputItems.value,inputDate.value)
+    handleControls('disappear','controls');
+    handleControlBack('appear','control-back')          
+ }
 
 searchBtn.addEventListener('click', evt => {
     
@@ -43,7 +51,9 @@ searchForm.addEventListener('submit', evt => {
        if(inputDate.validity.valid) setItem(INPUT_DATE, inputDate.value);
 
        getNextCard(inputSearch.value, inputItems.value, inputDate.value);
-       handleControls('disapear','controls');
+       handleControls('disappear',null); 
+       handleControlBack('appear',null);
+       handleBeers('back',null)
    }
 })
 

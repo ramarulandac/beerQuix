@@ -20,9 +20,7 @@ const types = {
 const storage = (type = LOCAL_STYPE) => {
 
     if (Storage !== undefined){
-        console.log(types)
-        console.log(type)
-        return types[type]
+         return types[type]
     }
     return types[COOKIES_STYPE]
 }

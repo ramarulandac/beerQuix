@@ -1,4 +1,4 @@
-.beers {       
+.beers {        
     width: 100%;    
     margin-top: 60px;
     margin-left: auto;
@@ -10,6 +10,10 @@
     border-top-right-radius: 25px;   
 }
 
+.back {
+    margin-top:0;
+}
+
 h2 {
     margin-left: 15px;
     margin-bottom: 3px;
@@ -17,7 +21,18 @@ h2 {
 }
 
 .beers a {
-   text-decoration: none;
+   text-decoration: none;  
+}
+
+.card-container, .card-container.main  {
+    background: whitesmoke;
+    padding: 3px;    
+}
+
+.card-container.main {   
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    z-index: 99999;
 }
 
 .card {
