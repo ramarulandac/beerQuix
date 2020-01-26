@@ -79,6 +79,13 @@ h2 {
     min-width: 10px;    
 }
 
+.image-container {
+    text-align: center;
+}
+
+.image-container img {    
+    width: 20%;    
+}
 .fa-thumbs-up,.fa-comment {
     color:#FFBD59;
     margin-left:1%;

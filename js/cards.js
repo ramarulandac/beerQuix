@@ -1,21 +1,23 @@
 
-import getBeers from './beers.js'
+import api from './beers.js';
 import auth from "./auth.js";
+
+const {getBeers} = api();
 
 const getTemplate = (info) => {
 
-    return `<div class="card-container ${info.main?'main':''}">
-            <a href="">
-            <header><h2>${info.name}</h2></header>
-            <div class="card">
-                <div class="card-content">                        
-                    <div class="card-img"><img src="${info.image}" alt=""></div>
-                    <div class="card-text"><p>${info.description}</p></div>
+    return `<a href="/detail/${info.beerId}">
+                <div class="card-container ${info.main?'main':''}">
+                  <header><h2>${info.name}</h2></header>
+                    <div class="card">
+                        <div class="card-content">                        
+                            <div class="card-img"><img src="${info.image}" alt=""></div>
+                            <div class="card-text"><p>${info.description}</p></div>
+                        </div>                
+                    </div>
                 </div>
-                <!---div class="like-comment"><i class="far fa-thumbs-up"></i><i class="far fa-comment"></i></div-->
-            </div>
             </a>
-            </div>`
+           `
 }
 
 const getCardRendered = (element, beers) => {

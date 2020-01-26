@@ -2,28 +2,55 @@
 import endPoint from './auth.js'
 import formatDate from './util.js'
 
-const getBeers =  async (filter, results, date) => {
+const api = () => {
+          
+    return {
 
-   try { 
-       console.log(endPoint.URL+`search=${filter}&limit=${results}`)
-        const response = await fetch(endPoint.URL+`search=${filter}&limit=${results}`,
-                                { method:'GET', headers:{'X-API-KEY':endPoint.API_KEY}}); 
+         getBeers :  async (filter, results, date) => {
 
-        if(!response)  throw Error('Request error..');
+            try { 
+             //   console.log(endPoint.URL+`?search=${filter}&limit=${results}`)
+                    const response = await fetch(endPoint.URL+`?search=${filter}&limit=${results}`,
+                                            { method:'GET', headers:{'X-API-KEY':endPoint.API_KEY}}); 
 
-        const data = await response.json();    
+                    if(!response.ok)  throw Error('Request error..');
 
-        // date filter
-        if(date) return data.beers.filter(beer => { 
-                                             if(beer.firstBrewed === formatDate(date))
-                                                return beer
-                                          });
-        // no date filter
-        return data.beers;
+                    const data = await response.json();    
 
-    } catch (err) {
-        throw Error(`Request fail.. ${err}`)
-    }   
+                    // date filter
+                    if(date) return data.beers.filter(beer => { 
+                                                        if(beer.firstBrewed === formatDate(date))
+                                                            return beer
+                                                    });
+                    // no date filter
+
+               //     console.log(data.beers)
+                    return data.beers;
+
+
+                } catch (err) {
+                    throw Error(`Request fail.. ${err}`)
+                }   
+            },
+
+        getBeerDetail: async (id) => {
+
+            try {
+                const response = await fetch(endPoint.URL+`/${id}`,
+                                        { method:'GET', headers:{'X-API-KEY':endPoint.API_KEY}});     
+                if(!response.ok) throw Error('Request Error');
+
+                const beerDetail = await response.json();
+                console.log(beerDetail.beer)
+                return beerDetail.beer;               
+
+            } catch(err){
+                throw Error(`Request fail.. ${err}`)
+            }
+
+        }
+    }
 }
 
-export default getBeers
+
+export default api;
