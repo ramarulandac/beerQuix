@@ -25,6 +25,14 @@ const beerTemplate = ({beerId, name, description, image, likes, comments} = {}) 
 
 } 
 
+
+const quoteTemplate = ({quote,date}) => {
+` <div class="list-item">
+  <p>${quote}</p>
+  <span>${date}</span>
+  </div>
+`}
+
 const {getBeerDetail} = api();
 
 const renderDetail = async (id) => {
