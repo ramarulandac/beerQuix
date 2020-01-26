@@ -13,9 +13,14 @@ const beerTemplate = ({beerId, name, description, image, likes, comments} = {}) 
             </div>
         </header>
         <div class="content">
-        ${description}
+          <p>
+          ${description}
+          </p>
         </div>
+        <br>
         <div class="like-comment"><i class="far fa-thumbs-up">${likes}</i><i class="far fa-comment">${comments}</i></div>
+        <br>
+        <a href="/beers">Back</a>
     </div>`
 
 } 

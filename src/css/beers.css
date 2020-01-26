@@ -79,17 +79,36 @@ h2 {
     min-width: 10px;    
 }
 
+/* Beer Detail   */
+
+.detail-section {
+    text-align: center;
+}
+
+
+.detail-section a {
+    text-align: center;
+    color:#E37136;
+}
 .image-container {
     text-align: center;
 }
 
-.image-container img {    
-    width: 20%;    
+.content {
+    text-align: justify;
+    color:  #212121;
+    overflow-y: auto;
 }
+
+.image-container img {    
+    width: 10%;    
+}
+
 .fa-thumbs-up,.fa-comment {
-    color:#FFBD59;
-    margin-left:1%;
-    margin-top: 0;     
+    color: #E37136;
+    margin-left:5%;
+    margin-top: 0;   
+    font-size: 1.5rem;  
 }
 
 .like-comment {

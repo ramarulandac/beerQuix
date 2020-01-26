@@ -50,20 +50,29 @@ searchForm.addEventListener('submit', evt => {
                     
        if(inputItems.validity.valid) setItem(INPUT_ITEMS, inputItems.value);
 
-       if(inputDate.validity.valid) setItem(INPUT_DATE, inputDate.value);
-
-       getNextCard(inputSearch.value, inputItems.value, inputDate.value);
+       if(inputDate.validity.valid) setItem(INPUT_DATE, inputDate.value);  
+       
        handleControls('disappear',null); 
        handleControlBack('appear',null);
        handleBeers('back',null)
+       getNextCard(inputSearch.value, inputItems.value, inputDate.value);
    }
 })
 
 backForm.addEventListener('submit', evt => {
 
-    evt.preventDefault();
+    evt.preventDefault();    
     
     handleControls('controls','disappear');
     handleControlBack('control-back','appear');
     handleBeers('beers','back');
 })
+
+
+export default () => {
+    return {
+        handleControlBack,
+        handleControls,
+        handleBeers
+    }
+}
