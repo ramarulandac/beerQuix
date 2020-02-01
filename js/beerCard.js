@@ -3,6 +3,7 @@ import api from './beers.js'
 const beerTemplate = ({beerId, name, description, image, likes, comments} = {}) => {
 
     return `
+    <a href="/beers">Back</a>
     <div class="detail-section">
         <header id="${beerId}">
             <div class="title-section">
@@ -18,20 +19,28 @@ const beerTemplate = ({beerId, name, description, image, likes, comments} = {}) 
           </p>
         </div>
         <br>
-        <div class="like-comment"><i class="far fa-thumbs-up">${likes}</i><i class="far fa-comment">${comments}</i></div>
+       <a href=""><div class="like-comment"><i class="far fa-thumbs-up">${likes}</i></div><a/>    ` 
+       /* <div id="detail" class="detail-content"></div>
+        <div class="quotes-list">
+          <h2>Quotes</h2>
+          <div id="quoteList">
+          </div>
+        </div>
+        <form id="quote-form" method="POST" class="quote-form" novalidate>
+          <div class="quote-input">
+            <label for="quote">Quote of this show</label>
+            <input name="kevin" required id="quote" placeholder="Add your quote" class="input primary" type="text">
+          </div>
+          <button type="submit" class="button primary">Add quote</button>
+        </form>  
         <br>
         <a href="/beers">Back</a>
-    </div>`
+    </div>`*/
 
 } 
 
 
-const quoteTemplate = ({quote,date}) => {
-` <div class="list-item">
-  <p>${quote}</p>
-  <span>${date}</span>
-  </div>
-`}
+
 
 const {getBeerDetail} = api();
 
@@ -42,6 +51,7 @@ const renderDetail = async (id) => {
         const beerDetail = await getBeerDetail(id);
         const beerCard = beerTemplate(beerDetail)
         const element = document.querySelector('.beers');
+        const quotation = document.querySelector('#detailSection');
         element.innerHTML = beerCard;
 
     } catch(err) {

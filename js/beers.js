@@ -8,8 +8,7 @@ const api = () => {
 
          getBeers :  async (filter, results, date) => {
 
-            try { 
-             //   console.log(endPoint.URL+`?search=${filter}&limit=${results}`)
+            try {              
                     const response = await fetch(endPoint.URL+`?search=${filter}&limit=${results}`,
                                             { method:'GET', headers:{'X-API-KEY':endPoint.API_KEY}}); 
 
@@ -24,7 +23,6 @@ const api = () => {
                                                     });
                     // no date filter
 
-               //     console.log(data.beers)
                     return data.beers;
 
 
@@ -51,6 +49,5 @@ const api = () => {
         }
     }
 }
-
 
 export default api;

@@ -24,16 +24,20 @@ const handleControls = replace(controls)
 const handleControlBack = replace(controlback)
 const handleBeers = replace(beers)
 
+
 inputSearch.value = getItem(INPUT_SEARCH) || null;
 inputDate.value = getItem(INPUT_DATE) || null;
 inputItems.value = getItem(INPUT_ITEMS) || 1;
 
+setItem('state','main');
+
 if (!(inputSearch.value === undefined) && ''!= inputSearch.value ) { 
     console.log(inputSearch.value)
-    getNextCard(inputSearch.value,inputItems.value,inputDate.value)
+   
     handleControls('controls','disappear');
     handleControlBack('control-back','appear');
     handleBeers('beers','back');
+    getNextCard(inputSearch.value,inputItems.value,inputDate.value)
  }
 
 searchBtn.addEventListener('click', evt => {
@@ -45,7 +49,8 @@ searchForm.addEventListener('submit', evt => {
    evt.preventDefault();  
    
    if(inputSearch.validity.valid) {
-       
+
+    
        setItem(INPUT_SEARCH,inputSearch.value)
                     
        if(inputItems.validity.valid) setItem(INPUT_ITEMS, inputItems.value);
@@ -54,20 +59,11 @@ searchForm.addEventListener('submit', evt => {
        
        handleControls('disappear',null); 
        handleControlBack('appear',null);
-       handleBeers('back',null)
-       getNextCard(inputSearch.value, inputItems.value, inputDate.value);
+       handleBeers('beers','dissapear');
+      
+       getNextCard(inputSearch.value, inputItems.value, inputDate.value);       
    }
 })
-
-backForm.addEventListener('submit', evt => {
-
-    evt.preventDefault();    
-    
-    handleControls('controls','disappear');
-    handleControlBack('control-back','appear');
-    handleBeers('beers','back');
-})
-
 
 export default () => {
     return {
