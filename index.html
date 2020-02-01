@@ -10,18 +10,20 @@
     <link rel="stylesheet" href="./src/css/controls.css">
     <link rel="stylesheet" href="./src/css/main.css">
     <link rel="stylesheet" href="./src/css/beers.css">
-    <link rel="stylesheet" href="./src/css/ctrlback.css">    
+    <link rel="stylesheet" href="./src/css/ctrlback.css">
     <script src="https://kit.fontawesome.com/a7b2fd5869.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
-    <nav class="navbar"><div class="logo">Beer Quix</div><div class="slogan">¡ Take part on our contest and earn beers..!</div></nav>
+    <nav class="navbar"><div class="logo">Beer Quix</div><div class="slogan">ยก Take part on our contest and earn beers..!</div></nav>
     <main> 
         <div class="container">
             <div class="row">  
                 <div class="control-back">
-                   <a href="/">Start again</a>
-                </div>             
+                    <form action="" class="back-form" novalidate>
+                        <button type="submit" class="goback-btn"><span>Go back</span></button>
+                    </form>
+                </div>                      
                 <div class="controls">
                         <form action="" class="search-form">
                             <div class="controls-btn" id="search-form">
@@ -46,16 +48,15 @@
                 </div>
                 <br>
                 <div class ="beers">
-                  <div class="card-container main">                        
+                    <div class="card-container main">
+                      
                   </div> 
                 </div>               
             </div>
         </div>       
     </main>
-    <section id="detailSection" class="detail-section">
-    </section>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
     <script type="module" src="js/routes.js"></script>
 </body>
-</html>    
+</html>

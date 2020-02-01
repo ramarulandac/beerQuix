@@ -1,5 +1,9 @@
 import api from './beers.js'
 
+const {getBeerDetail, postBeerLike} = api();
+
+
+
 const beerTemplate = ({beerId, name, description, image, likes, comments} = {}) => {
 
     return `
@@ -19,8 +23,13 @@ const beerTemplate = ({beerId, name, description, image, likes, comments} = {}) 
           </p>
         </div>
         <br>
-       <a href=""><div class="like-comment"><i class="far fa-thumbs-up">${likes}</i></div><a/>    ` 
-       /* <div id="detail" class="detail-content"></div>
+        <div class="like-comment"><i class="far fa-thumbs-up">${likes}</i><i class="far fa-comment">${comments}</i></div>
+       
+        `
+
+       /* <a href="" onclick="getLiked(${beerId},"like-beer")"><div class="like-beer"><i class="far fa-thumbs-up">${likes}</i></div><a/>     
+        <a href="" onclick="getLiked(${beerId},"like-beer")"><div class="like-beer"><i class="far fa-thumbs-up">${likes}</i></div><a/>
+        <div id="detail" class="detail-content"></div>
         <div class="quotes-list">
           <h2>Quotes</h2>
           <div id="quoteList">
@@ -35,14 +44,16 @@ const beerTemplate = ({beerId, name, description, image, likes, comments} = {}) 
         </form>  
         <br>
         <a href="/beers">Back</a>
-    </div>`*/
+    </div>*/
 
 } 
 
 
+const likeTemplate = (beerId, likes) => {
+    return `<a href="" onclick="getLiked(${beerId},"like-beer")"><div class="like-beer"><i class="far fa-thumbs-up">${likes}</i></div><a/>`  
+}
 
 
-const {getBeerDetail} = api();
 
 const renderDetail = async (id) => {
 
@@ -59,5 +70,12 @@ const renderDetail = async (id) => {
     }
 
 }
+/*
+const beerLike = async (beerId, element) => {
+
+  const likes = await postBeerLike(beerId)
+
+
+}*/
 
 export default renderDetail

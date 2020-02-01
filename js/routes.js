@@ -13,21 +13,33 @@ const {handleControlBack, handleControls, handleBeers} = handle();
 
 const {setItem, getItem} = storage(COOKIES_STYPE)
 
+setItem('main-screen','true')
+
 page('/detail/:id', ctx => {    
     const {params:{id}} = ctx; 
     handleControlBack('control-back','appear');
     renderDetail(id)
 })
 
-page('/', ctx => {     
-    handleControls('controls','disappear');
-    handleControlBack('control-back','appear');
-    handleBeers('dissapear');
-})
 
 page('/beers', ctx => {
-    handleControls('disappear',null); 
-    handleControlBack('appear',null);
-    handleBeers('back',null)
-    getNextCard(inputSearch, inputItems.value, inputDate.value);    
+
+    const main = getItem('main-screen')
+    
+
+    if (main){
+        handleControls('disappear',null); 
+        handleControlBack('appear',null);
+        handleBeers('back',null)
+        getNextCard(inputSearch, inputItems.value, inputDate.value);
+    } else {
+
+        handleControls('controls','disappear');
+        handleControlBack('control-back','appear');
+        handleBeers('beers','back');     
+        getNextCard(inputSearch, inputItems.value, inputDate.value);
+    }      
+    
 })
+
+page()

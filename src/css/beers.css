@@ -1,9 +1,10 @@
 .beers {        
     width: 100%;    
-    margin-top: 15px;
+    margin-top: 60px;
     margin-left: auto;
     margin-right: auto;
-    padding: 5px;   
+    padding: 5px;
+   /* height: 680px;*/
     background: whitesmoke;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;   
@@ -112,8 +113,4 @@ h2 {
 
 .like-comment {
    text-align: center;
-}
-
-.dissapear {
-    display: none;
 }
